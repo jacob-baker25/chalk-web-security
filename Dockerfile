@@ -21,7 +21,7 @@ RUN mkdir -p /app/data && chown node:node /app/data
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/lib ./lib
-COPY --from=builder /app/data ./data
+COPY --from=builder /app/node_modules/bcryptjs ./node_modules/bcryptjs
 
 USER node
 EXPOSE 3000
