@@ -26,4 +26,4 @@ COPY --from=builder /app/data ./data
 
 USER node
 EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "node lib/seed.js && node server.js"]
